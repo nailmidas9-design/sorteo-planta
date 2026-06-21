@@ -11,88 +11,49 @@
     h2 { text-align: center; margin-top: 10px; color: #111; font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 5px; }
     .instrucciones { font-size: 14px; color: #666; text-align: center; margin-bottom: 15px; line-height: 1.4; }
     
-    /* CONTENEDOR INTRO PARA TU ARTE VERTICAL PREMIUM */
-    #intro-foto-container {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      border: 2px solid #cc0000;
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      max-height: 85vh;
-      opacity: 1;
-    }
-    #intro-foto-container.hidden {
-      max-height: 0;
-      margin-bottom: 0;
-      opacity: 0;
-      padding: 0;
-      border: none;
-      pointer-events: none;
-    }
-    #intro-foto-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    #intro-foto-container { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid #cc0000; transition: all 0.8s ease; max-height: 85vh; opacity: 1; }
+    #intro-foto-container.hidden { max-height: 0; margin-bottom: 0; opacity: 0; padding: 0; border: none; pointer-events: none; }
+    #intro-foto-container img { width: 100%; height: auto; display: block; }
 
-    /* Barra de Progreso - AHORA EN VERDE */
-    .progress-container { margin-bottom: 20px; background: #eee; border-radius: 12px; padding: 3px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); position: relative; height: 22px; margin-top: 10px; }
+    /* Barra de Progreso */
+    .progress-container { margin-bottom: 20px; background: #eee; border-radius: 12px; padding: 3px; position: relative; height: 22px; margin-top: 10px; }
     .progress-bar { height: 100%; background: #00c853; width: 0%; border-radius: 10px; transition: width 0.5s ease-in-out; position: relative; }
     
-    .planta-logo-icono { 
-      position: absolute; 
-      right: -20px; 
-      top: -14px; 
-      width: 46px; 
-      height: 46px; 
-      z-index: 10; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .planta-logo-icono img { width: 100%; height: auto; display: block; }
+    /* Logo de la planta sin bordes */
+    .planta-logo-icono { position: absolute; right: -25px; top: -14px; width: 50px; z-index: 10; }
+    .planta-logo-icono img { width: 100%; height: auto; display: block; background: transparent; }
 
     .progress-text { text-align: center; font-size: 13px; font-weight: bold; margin-top: 5px; color: #111; }
     
-    /* Cuadrícula de Tickets */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); gap: 6px; max-height: 230px; overflow-y: auto; padding: 8px; border: 1px solid #eef0f2; border-radius: 10px; background: #fafafa; margin-bottom: 20px; }
-    .btn-ticket { position: relative; padding: 10px 2px; border: 1px solid #dbe0e5; background: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px; text-align: center; }
+    /* Cuadrícula corregida */
+    .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; max-height: 230px; overflow-y: auto; padding: 8px; border: 1px solid #eef0f2; border-radius: 10px; background: #fafafa; margin-bottom: 20px; }
+    .btn-ticket { position: relative; padding: 8px 0; border: 1px solid #dbe0e5; background: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 12px; text-align: center; }
     
-    .btn-ticket.seleccionado { background: #28a745 !important; color: #fff !important; border-color: #28a745 !important; }
+    .btn-ticket.seleccionado { background: #00c853 !important; color: #fff !important; border-color: #00c853 !important; }
     .btn-ticket.vendido { background: #ffebee; color: #b71c1c; border-color: #ffcbd1; cursor: not-allowed; }
-    .btn-ticket.vendido::after { content: "X"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: rgba(183, 28, 28, 0.5); background: rgba(255, 235, 235, 0.3); border-radius: 7px; }
+    .btn-ticket.vendido::after { content: "X"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: #b71c1c; }
     
     .form-group { margin-bottom: 15px; }
     label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; color: #222; }
     input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 14px; }
     
-    /* CAJA DE MONTO EN COLOR DORADO (#ffd700) CON TEXTO OSCURO PARA EXCELENTE CONTRASTE */
-    .display-monto { background: #ffd700; font-weight: bold; color: #111; text-align: center; font-size: 18px; padding: 14px; border-radius: 8px; line-height: 1.5; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15); }
+    .display-monto { background: #ffd700; font-weight: bold; color: #111; text-align: center; font-size: 18px; padding: 14px; border-radius: 8px; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); }
+    .btn-action { width: 100%; padding: 14px; background: #00c853; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
+    .btn-action:disabled { background: #cbd5e1; cursor: not-allowed; }
     
-    /* BOTÓN CONTINUAR EN COLOR VERDE (#00c853) */
-    .btn-action { width: 100%; padding: 14px; background: #00c853; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0, 200, 83, 0.2); }
-    .btn-action:disabled { background: #cbd5e1; color: #94a3b8; cursor: not-allowed; box-shadow: none; }
-    .btn-ganar { background: #00c853 !important; box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3); font-size: 18px; }
-    
-    .btn-back-top { background: none; border: none; color: #666; font-size: 13px; font-weight: 600; cursor: pointer; padding: 0; margin-bottom: 15px; text-decoration: underline; }
+    .btn-back-top { background: none; border: none; color: #666; font-size: 13px; text-decoration: underline; cursor: pointer; }
     .pm-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 15px; margin-bottom: 20px; }
-    .pm-line { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e9ecef; }
-    .pm-line:last-child { border-bottom: none; }
-    .pm-label { font-size: 13px; color: #666; }
-    .pm-value { font-weight: bold; font-size: 14px; color: #111; }
+    .pm-line { display: flex; justify-content: space-between; padding: 8px 0; }
+    .pm-value { font-weight: bold; }
     .btn-copy { padding: 4px 8px; font-size: 11px; background: #e9ecef; border: 1px solid #ced4da; border-radius: 4px; cursor: pointer; }
 
     .accordion { border: 1px solid #dbe0e5; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
-    .accordion-header { background: #f4f6f8; padding: 12px; font-size: 13px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #cc0000; }
-    .accordion-content { padding: 12px; font-size: 13px; color: #555; line-height: 1.4; display: none; background: #fff; font-weight: normal !important; }
+    .accordion-header { background: #f4f6f8; padding: 12px; font-size: 13px; font-weight: bold; cursor: pointer; color: #cc0000; display: flex; justify-content: space-between; }
+    .accordion-content { padding: 12px; font-size: 13px; color: #555; display: none; background: #fff; }
 
-    #msg { margin-top: 15px; text-align: center; font-weight: 600; font-size: 14px; padding: 12px; border-radius: 8px; display: none; }
-    .success { background: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
-    .error { background: #ffebee; color: #b71c1c; border: 1px solid #ffcdd2; }
-    .leyenda { display: flex; justify-content: center; gap: 12px; margin-bottom: 15px; font-size: 12px; }
-    .info-precio { font-size: 15px; color: #cc0000; text-align: center; margin-bottom: 15px; font-weight: bold; background: #fef2f2; padding: 8px; border-radius: 6px; border: 1px dashed #fca5a5; }
+    #msg { margin-top: 15px; text-align: center; font-weight: 600; padding: 12px; border-radius: 8px; display: none; }
+    .success { background: #e8f5e9; color: #1b5e20; }
+    .error { background: #ffebee; color: #b71c1c; }
     .page { display: none; }
     .page.active { display: block; }
   </style>
@@ -100,121 +61,58 @@
 <body>
 
 <div class="container">
-  
   <div id="page-1" class="page active">
     <h2>🎟️ Móntate en la Honda y Gana</h2>
-    <div class="instrucciones">Elige tus números, completa tus datos y participa</div>
-
-    <!-- IMAGEN DE IMPACTO DE DRIVE VINCULADA -->
     <div id="intro-foto-container">
-      <img id="img-planta-impacto" src="https://lh3.googleusercontent.com/d/1mfd72SdumMWds2VIsZJ5twzJfHyk_CFd" alt="Hoy toca o no toca">
+      <img src="https://lh3.googleusercontent.com/d/1mfd72SdumMWds2VIsZJ5twzJfHyk_CFd" alt="Hoy toca">
     </div>
 
     <div class="progress-container">
       <div id="mi-barra" class="progress-bar">
         <div class="planta-logo-icono">
-            <!-- LOGO PNG TRANSPARENTE DE LA PLANTA AVANZANDO -->
-            <img id="logo-avanza" src="https://lh3.googleusercontent.com/d/1mD46Oa0hN7Oq1FySkTMbW-vdtmnvRQcB" alt="Planta">
+            <img src="https://lh3.googleusercontent.com/d/1mD46Oa0hN7Oq1FySkTMbW-vdtmnvRQcB" alt="Logo">
         </div>
       </div>
     </div>
-    <div id="progreso-texto" class="progress-text">Cargando venta de boletos...</div>
+    <div id="progreso-texto" class="progress-text">Cargando...</div>
 
     <div class="accordion">
       <div class="accordion-header" onclick="alternarAcordeon()">
-        <span>⚠️ Ver Condiciones del Sorteo (Importante)</span>
-        <span id="acc-flecha">▼</span>
+        <span>⚠️ Ver Condiciones</span><span>▼</span>
       </div>
-      <div class="accordion-content" id="acc-content">
-        * 📅 El sorteo juega el 31 de JULIO 2026 a las 7:05 PM.<br>
-        * 📈 Se debe cumplir con una meta mínima del 70% de los números vendidos para proceder con el sorteo en la fecha indicada. De lo contrario, se pospondrá.<br>
-        * 🔮 Garantía de Ganador: Si en el sorteo de Triple A sale un número que no fue seleccionado se tomará en cuenta el triple B. Queremos que haya un ganador.
-      </div>
+      <div class="accordion-content" id="acc-content">Condiciones del sorteo aquí...</div>
     </div>
 
-    <div class="info-precio">💵 Valor del ticket: 2.400,00 Bs. (3 $)</div>
-
-    <div class="leyenda">
-      <div style="display:flex; align-items:center; gap:4px;"><div style="width:10px; height:10px; border:1px solid #cbd3da; background:#fff; border-radius:3px;"></div> Disponible</div>
-      <div style="display:flex; align-items:center; gap:4px;"><div style="width:10px; height:10px; border:1px solid #ffcbd1; background:#ffebee; border-radius:3px;"></div> Vendido</div>
-      <div style="display:flex; align-items:center; gap:4px;"><div style="width:10px; height:10px; background:#28a745; border-radius:3px;"></div> Seleccionado</div>
-    </div>
-
-    <div class="grid" id="grid-tickets">Cargando números...</div>
+    <div class="grid" id="grid-tickets"></div>
 
     <div class="form-group">
       <label>Números Seleccionados</label>
-      <input type="text" id="ticket-display" readonly placeholder="Toca tus números en la cuadrícula 👆">
+      <input type="text" id="ticket-display" readonly>
     </div>
 
-    <div class="form-group">
-      <!-- VISOR EN DORADO -->
-      <div class="display-monto" id="monto-calculado">
-        Total Tickets: 0<br>
-        Total: 0,00 Bs.
-      </div>
+    <div class="display-monto" id="monto-calculado">Total Tickets: 0<br>Total: 0,00 Bs.</div>
+
+    <div class="form-group" style="margin-top:15px;">
+      <label>Nombre</label>
+      <input type="text" id="nombre">
+      <label>Teléfono</label>
+      <input type="tel" id="telefono">
     </div>
 
-    <div class="form-group">
-      <label>Nombre y Apellido</label>
-      <input type="text" id="nombre" placeholder="Ej. Juan Pérez">
-    </div>
-    <div class="form-group">
-      <label>Número de Teléfono / WhatsApp</label>
-      <input type="tel" id="telefono" placeholder="Ej. 04121234567">
-    </div>
-
-    <!-- COPY ACTUALIZADO Y EN COLOR VERDE -->
     <button type="button" class="btn-action" id="btn-continuar" disabled onclick="irAPaso2()">Ultimo paso para jugar 👉</button>
   </div>
 
   <div id="page-2" class="page">
-    <button type="button" class="btn-back-top" onclick="irAPaso1()">◀ ups se me olvidó algo</button>
-    
-    <h2>🎟️ Completa y reserva tu ticket </h2>
-    <p style="font-size:14px; color:#555; text-align:center; margin-bottom:15px;">
-      Realiza tu Pago Móvil por el monto exacto y pega la captura abajo para asegurar tus números.
-    </p>
-
+    <button class="btn-back-top" onclick="irAPaso1()">◀ Atrás</button>
     <div class="pm-box">
-      <div class="pm-line">
-        <span class="pm-label">Banco:</span>
-        <span class="pm-value">Provincial</span>
-      </div>
-      <div class="pm-line">
-        <span class="pm-label">Teléfono:</span>
-        <span class="pm-value">
-          <span id="val-tlf">04142298507</span>
-          <button class="btn-copy" onclick="copiarTexto('val-tlf', this)">Copiar</button>
-        </span>
-      </div>
-      <div class="pm-line">
-        <span class="pm-label">Cédula:</span>
-        <span class="pm-value">
-          <span id="val-ci">23889925</span>
-          <button class="btn-copy" onclick="copiarTexto('val-ci', this)">Copiar</button>
-        </span>
-      </div>
+      <div class="pm-line"><span>Banco:</span><span class="pm-value">Provincial</span></div>
+      <div class="pm-line"><span>Teléfono:</span><span class="pm-value">04142298507</span></div>
+      <div class="pm-line"><span>Cédula:</span><span class="pm-value">23889925</span></div>
     </div>
-
-    <form id="rf-form" onsubmit="prepararEnvio(event)">
-      <div class="form-group">
-        <label>Monto a transferir:</label>
-        <!-- VISOR EN DORADO EN PASO 2 -->
-        <div class="display-monto" id="monto-confirmar">0,00 Bs.</div>
-      </div>
-
-      <div class="form-group">
-        <label>Pega aquí la captura (Imagen)</label>
-        <input type="file" id="capture-file" accept="image/*" required>
-      </div>
-
-      <!-- BOTÓN "VOY A GANAR" EN VERDE -->
-      <button type="submit" class="btn-action btn-ganar" id="btn-enviar">Voy a Ganar 🚀</button>
-    </form>
+    <div class="display-monto" id="monto-confirmar">0,00 Bs.</div>
+    <input type="file" id="capture-file" accept="image/*" required>
+    <button type="submit" class="btn-action btn-ganar" id="btn-enviar" onclick="prepararEnvio()">Voy a Ganar 🚀</button>
   </div>
-  
-  <div id="msg"></div>
 </div>
 
 <script>
@@ -222,162 +120,49 @@
   let ticketsSeleccionados = [];
   const PRECIO_TICKET_BS = 2400;
 
-  window.onload = function() {
-    setTimeout(function() {
-      const fotoCont = document.getElementById('intro-foto-container');
-      if (fotoCont) {
-        fotoCont.classList.add('hidden');
-      }
-    }, 6000);
-
-    fetch(WEB_APP_URL + "?run=obtenerTicketsYDatos")
-      .then(res => res.json())
-      .then(json => inicializarDatos(json))
-      .catch(err => console.error("Error rápido:", err));
+  window.onload = () => {
+    setTimeout(() => document.getElementById('intro-foto-container').classList.add('hidden'), 6000);
+    fetch(WEB_APP_URL + "?run=obtenerTicketsYDatos").then(r=>r.json()).then(inicializarDatos);
   };
 
   function inicializarDatos(resultado) {
-    const barra = document.getElementById('mi-barra');
-    barra.style.width = resultado.porcentajeVendido + "%";
-    document.getElementById('progreso-texto').innerText = resultado.porcentajeVendido.replace('.', ',') + "% de los boletos vendidos";
+    document.getElementById('mi-barra').style.width = resultado.porcentajeVendido + "%";
+    document.getElementById('progreso-texto').innerText = resultado.porcentajeVendido + "% vendidos";
     renderizarTickets(resultado.tickets);
   }
 
   function renderizarTickets(tickets) {
     const grid = document.getElementById('grid-tickets');
     grid.innerHTML = '';
-    const fragmento = document.createDocumentFragment();
-    
     tickets.forEach(t => {
       const btn = document.createElement('button');
-      btn.className = 'btn-ticket';
+      btn.className = 'btn-ticket' + (t.estado === 'Vendido' ? ' vendido' : '');
       btn.innerText = t.numero;
-      
-      if(t.estado === 'Vendido') {
-        btn.classList.add('vendido');
-        btn.disabled = true;
-      } else {
-        btn.onclick = function(e) {
-          e.preventDefault();
-          alternarTicket(btn, t.numero);
-        };
-      }
-      fragmento.appendChild(btn);
+      if(t.estado !== 'Vendido') btn.onclick = () => alternarTicket(btn, t.numero);
+      grid.appendChild(btn);
     });
-    grid.appendChild(fragmento);
   }
 
   function alternarTicket(elemento, numero) {
     const index = ticketsSeleccionados.indexOf(numero);
-    if (index === -1) {
-      ticketsSeleccionados.push(numero);
-      elementoo.classList.add('seleccionado');
-    } else {
-      ticketsSeleccionados.splice(index, 1);
-      elemento.classList.remove('seleccionado');
-    }
+    if (index === -1) { ticketsSeleccionados.push(numero); elemento.classList.add('seleccionado'); }
+    else { ticketsSeleccionados.splice(index, 1); elemento.classList.remove('seleccionado'); }
     
-    ticketsSeleccionados.sort();
     document.getElementById('ticket-display').value = ticketsSeleccionados.join(', ');
-    
-    const cantidad = ticketsSeleccionados.length;
-    const totalBolivares = cantidad * PRECIO_TICKET_BS;
-    const displayMonto = document.getElementById('monto-calculado');
-    
-    if (cantidad > 0) {
-      displayMonto.innerHTML = "Total Tickets: " + cantidad + "<br><strong>Total: " + totalBolivares.toLocaleString('es-VE', {minimumFractionDigits: 2}) + " Bs.</strong>";
-      document.getElementById('btn-continuar').disabled = false;
-    } else {
-      displayMonto.innerHTML = "Total Tickets: 0<br>Total: 0,00 Bs.";
-      document.getElementById('btn-continuar').disabled = true;
-      document.getElementById('ticket-display').value = '';
-    }
+    const total = ticketsSeleccionados.length * PRECIO_TICKET_BS;
+    document.getElementById('monto-calculado').innerHTML = `Total Tickets: ${ticketsSeleccionados.length}<br>Total: ${total.toLocaleString()} Bs.`;
+    document.getElementById('btn-continuar').disabled = ticketsSeleccionados.length === 0;
   }
-
+  
   function irAPaso2() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const tlf = document.getElementById('telefono').value.trim();
-    if(!nombre || !tlf) {
-      alert("Por favor, introduce tu Nombre, Apellido y Teléfono antes de continuar.");
-      return;
-    }
-    const totalBolivares = ticketsSeleccionados.length * PRECIO_TICKET_BS;
-    document.getElementById('monto-confirmar').innerHTML = "<strong>" + totalBolivares.toLocaleString('es-VE', {minimumFractionDigits: 2}) + " Bs.</strong> por " + ticketsSeleccionados.length + " ticket(s)";
+    const total = ticketsSeleccionados.length * PRECIO_TICKET_BS;
+    document.getElementById('monto-confirmar').innerText = total.toLocaleString() + " Bs.";
     document.getElementById('page-1').classList.remove('active');
     document.getElementById('page-2').classList.add('active');
-    window.scrollTo(0,0);
   }
-
   function irAPaso1() {
     document.getElementById('page-2').classList.remove('active');
     document.getElementById('page-1').classList.add('active');
-    window.scrollTo(0,0);
-  }
-
-  function copiarTexto(idElemento, boton) {
-    const texto = document.getElementById(idElemento).innerText;
-    navigator.clipboard.writeText(texto).then(() => {
-      const originalText = boton.innerText;
-      boton.innerText = "¡Copiado!";
-      setTimeout(() => { boton.innerText = originalText; }, 1500);
-    });
-  }
-
-  function alternarAcordeon() {
-    const content = document.getElementById('acc-content');
-    const flecha = document.getElementById('acc-flecha');
-    if(content.style.display === "block") {
-      content.style.display = "none";
-      flecha.innerText = "▼";
-    } else {
-      content.style.display = "block";
-      flecha.innerText = "▲";
-    }
-  }
-
-  function prepararEnvio(e) {
-    e.preventDefault();
-    const btnSubmit = document.getElementById('btn-enviar');
-    btnSubmit.disabled = true;
-    btnSubmit.innerText = "Guardando tu jugada... ¡Mucha suerte!";
-    
-    const archivoInput = document.getElementById('capture-file');
-    const archivo = archivoInput.files[0];
-    const datos = {
-      tickets: ticketsSeleccionados.join(', '),
-      nombre: document.getElementById('nombre').value,
-      telefono: document.getElementById('telefono').value
-    };
-    
-    if (archivo) {
-      const lector = new FileReader();
-      lector.onload = function(eventoLector) {
-        const bytesBase64 = eventoLector.target.result.split(',')[1];
-        fetch(WEB_APP_URL, {
-          method: "POST",
-          body: JSON.stringify({ datos: datos, archivoBytes: bytesBase64, archivoNombre: archivo.name, archivoMime: archivo.type })
-        })
-        .then(res => res.json())
-        .then(res => {
-          const msgDiv = document.getElementById('msg');
-          msgDiv.style.display = "block";
-          if(res.exito) {
-            msgDiv.className = "success";
-            msgDiv.innerText = res.mensaje;
-            document.getElementById('rf-form').reset();
-            ticketsSeleccionados = [];
-            irAPaso1();
-            fetch(WEB_APP_URL + "?run=obtenerTicketsYDatos").then(r => r.json()).then(j => inicializarDatos(j));
-          } else {
-            msgDiv.className = "error";
-            msgDiv.innerText = res.mensaje;
-            btnSubmit.disabled = false;
-            btnSubmit.innerText = "Voy a Ganar 🚀";
-          }
-        });
-      };
-      lector.readAsDataURL(archivo);
-    }
   }
 </script>
 </body>
