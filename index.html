@@ -19,9 +19,9 @@
     .progress-container { margin-bottom: 20px; background: #eee; border-radius: 12px; padding: 3px; position: relative; height: 22px; margin-top: 10px; }
     .progress-bar { height: 100%; background: #00c853; width: 0%; border-radius: 10px; transition: width 0.5s ease-in-out; position: relative; }
     
-    /* Logo de la planta limpio y flotante */
+    /* Logo de la planta local flotante sin fondos */
     .planta-logo-icono { position: absolute; right: -25px; top: -14px; width: 50px; z-index: 10; }
-    .planta-logo-icono img { width: 100%; height: auto; display: block; background: transparent; }
+    .planta-logo-icono img { width: 100%; height: auto; display: block; background: transparent; border: none; }
 
     .progress-text { text-align: center; font-size: 13px; font-weight: bold; margin-top: 5px; color: #111; }
     
@@ -74,13 +74,13 @@
     <div class="instrucciones">Elige tus números, completa tus datos y participa</div>
 
     <div id="intro-foto-container">
-      <img id="img-planta-impacto" src="https://docs.google.com/uc?export=download&id=1mfd72SdumMWds2VIsZJ5twzJfHyk_CFd" alt="Hoy toca o no toca">
+      <img id="img-planta-impacto" src="apagon.png" alt="Hoy toca o no toca">
     </div>
 
     <div class="progress-container">
       <div id="mi-barra" class="progress-bar">
         <div class="planta-logo-icono">
-            <img src="https://docs.google.com/uc?export=download&id=1zDWQuLxNwOOWKYiLy-xP1YhO8S5khaz-" alt="Planta">
+            <img src="planta-logo.png" alt="Planta">
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@
         <input type="file" id="capture-file" accept="image/*" required>
       </div>
 
-      <button type="submit" class="btn-action" id="btn-enviar">Voy a Ganar</button>
+      <button type="submit" class="btn-action" id="btn-enviar">Todo listo a Jugar</button>
     </form>
   </div>
   
@@ -328,7 +328,7 @@
             msgDiv.className = "error";
             msgDiv.innerText = res.mensaje;
             btnSubmit.disabled = false;
-            btnSubmit.innerText = "Voy a Ganar";
+            btnSubmit.innerText = "Todo listo a Jugar";
           }
         });
       };
