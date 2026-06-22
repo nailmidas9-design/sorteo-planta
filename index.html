@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,17 +25,22 @@
     }
     .instrucciones { font-size: 14px; color: #666; text-align: center; margin-bottom: 15px; line-height: 1.4; }
     
-    /* Sello de Confianza Lotería del Zulia */
     .sello-confianza {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 6px;
       background: #f8f9fa;
       border: 1px solid #e9ecef;
       border-radius: 10px;
-      padding: 8px 12px;
+      padding: 10px 12px;
       margin-bottom: 15px;
+    }
+    .sello-confianza .badge-aval {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .sello-confianza span {
       font-size: 11px;
@@ -50,12 +54,24 @@
       width: auto;
       display: block;
     }
+    .sello-confianza .badge-fecha {
+      font-size: 13px;
+      font-weight: bold;
+      color: #cc0000;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-top: 1px solid #e9ecef;
+      width: 100%;
+      justify-content: center;
+      padding-top: 6px;
+      margin-top: 2px;
+    }
 
     #intro-foto-container { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid #cc0000; transition: all 0.8s ease; max-height: 85vh; opacity: 1; }
     #intro-foto-container.hidden { max-height: 0; margin-bottom: 0; opacity: 0; padding: 0; border: none; pointer-events: none; }
     #intro-foto-container img { width: 100%; height: auto; display: block; }
 
-    /* Barra de Progreso */
     .progress-container { margin-bottom: 20px; background: #eee; border-radius: 12px; padding: 3px; position: relative; height: 22px; margin-top: 10px; }
     .progress-bar { height: 100%; background: #00c853; width: 0%; border-radius: 10px; transition: width 0.5s ease-in-out; position: relative; }
     
@@ -64,7 +80,6 @@
 
     .progress-text { text-align: center; font-size: 13px; font-weight: bold; margin-top: 5px; color: #111; }
     
-    /* Cuadrícula */
     .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; max-height: 230px; overflow-y: auto; padding: 8px; border: 1px solid #eef0f2; border-radius: 10px; background: #fafafa; margin-bottom: 20px; }
     .btn-ticket { position: relative; padding: 10px 0; border: 1px solid #dbe0e5; background: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px; text-align: center; }
     
@@ -76,10 +91,8 @@
     label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; color: #222; text-transform: uppercase; }
     input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 14px; background: #fff; }
     
-    /* Visores Dorados */
     .display-monto { background: #ffd700; font-weight: bold; color: #111; text-align: center; font-size: 18px; padding: 14px; border-radius: 8px; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); line-height: 1.5; }
     
-    /* Botones de Acción */
     .btn-action { width: 100%; padding: 14px; background: #00c853; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0, 200, 83, 0.2); }
     .btn-action:disabled { background: #cbd5e1; color: #94a3b8; cursor: not-allowed; box-shadow: none; }
     
@@ -113,17 +126,23 @@
 </head>
 <body>
 
+<!-- Alerta limpia libre de popups de navegador -->
 <div id="custom-alert" class="custom-alert">⚠️ Por favor, introduce tu Nombre, Apellido y Teléfono antes de continuar.</div>
 
 <div class="container">
-  
+
   <div id="page-1" class="page active">
-    <h2>🎟️ Montate en la Honda y Gana</h2>
+    <h2>Montate en la Honda y Gana</h2>
     
-    <!-- Sello de Confianza con la Lotería del Zulia -->
+    <!-- Sello de Confianza con la Lotería del Zulia y Fecha de Juego Integrada -->
     <div class="sello-confianza">
-      <span>Avalado por:</span>
-      <img src="loteria-zulia.png" alt="Lotería del Zulia" onerror="this.style.display='none'; this.previousElementSibling.innerText='Sorteo Oficial por Triple Zulia';">
+      <div class="badge-aval">
+        <span>Avalado por:</span>
+        <img src="loteria-zulia.png" alt="Lotería del Zulia" onerror="this.style.display='none'; this.previousElementSibling.innerText='Sorteo Oficial por Triple Zulia';">
+      </div>
+      <div class="badge-fecha">
+        📅 Sorteo: 31 de JULIO 2026 - 7:05 PM
+      </div>
     </div>
 
     <div class="instrucciones">Elige tus números, completa tus datos y participa</div>
@@ -147,9 +166,9 @@
         <span id="acc-flecha">▼</span>
       </div>
       <div class="accordion-content" id="acc-content">
-        * 📅 El sorteo juega el <strong>31 de JULIO 2026</strong> a las <strong>7:05 PM</strong>.<br>
+        * 💵 El dólar está cotizado a <strong>800 Bs.</strong> (Para evitar malentendidos).<br>
         * 📈 Se debe cumplir con una meta mínima del <strong>70%</strong> de los números vendidos para proceder con el sorteo en la fecha indicada. De lo contrario, se pospondrá.<br>
-        * 🔮 Garantía de <strong>Ganador</strong>: Jugamos directamente por los resultados oficiales de la **Lotería del Zulia (Triple Zulia)**. Si en el sorteo del **Triple A** sale un número que no fue vendido, se tomará como ganador el número correspondiente del **Triple B**. ¡Queremos que haya un ganador sí o sí!
+        * 🔮 Garantía de <strong>Ganador</strong>: Si en el sorteo de <strong>Triple A</strong> sale un número que no fue seleccionado se tomará en cuenta el <strong>triple B</strong>. Queremos que haya un <strong>ganador</strong>.
       </div>
     </div>
 
@@ -235,8 +254,8 @@
 </div>
 
 <script>
-  // URL de tu Apps Script ya sincronizada
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw2Cft6UbZcNFfU_bf7I0PUwhpLD8SZglkEFBiPiop7CMiZBqr2zPvafcoBusD1lb3T/exec"; 
+  // URL de tu aplicación Google Apps Script enlazada correctamente
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw2Cft6UbZcNFfU_bf7I0PUwhpLD8SZglkEFBiPiop7CMiZBqr2zPvafcoBusD1lb3T/exec";
   let ticketsSeleccionados = [];
   const PRECIO_TICKET_BS = 2400;
 
@@ -248,7 +267,7 @@
       }
     }, 6000);
 
-    // Carga inicial de números
+    // Carga inicial de números desde Google Sheets
     fetch(WEB_APP_URL)
       .then(res => {
         if (!res.ok) throw new Error('Error de servidor');
@@ -264,7 +283,7 @@
       })
       .catch(err => {
         console.error("Error de conexión:", err);
-        document.getElementById('grid-tickets').innerText = "Error al conectar con la base de datos.";
+        document.getElementById('grid-tickets').innerText = "Error al cargar la cuadrícula. Revisa la URL.";
       });
   };
 
@@ -406,7 +425,7 @@
             ticketsSeleccionados = [];
             irAPaso1();
             
-            // Recargar cuadrícula inmediatamente
+            // Recarga automática de la cuadrícula al guardar
             fetch(WEB_APP_URL)
               .then(r => r.json())
               .then(j => inicializarDatos(j))
@@ -434,4 +453,3 @@
 </script>
 </body>
 </html>
-```
